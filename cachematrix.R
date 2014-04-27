@@ -24,15 +24,16 @@ makeCacheMatrix <- function(x = numeric()) {
 cacheSolve <- function(x, ...) {
   s <- x$getsolve()
   if(!is.null(s)) {
-    message("getting cached data previously")
+    message("getting cached data previously calculated")
     return(s)
   }
+  
   data <- x$get()
   s <- solve(data, ...)
   x$setsolve(s)
   s
 }
-
+message("end")
         ## Return a matrix that is the inverse of 'x'
         ## Note: We assume that the matrix is always invertible
 
